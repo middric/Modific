@@ -430,7 +430,7 @@ def run_hl_changes(view):
     if(view in progress):
         return
     progress[view] = True
-    view.run_command('hl_changes')
+    sublime.set_timeout(lambda: view.run_command('hl_changes'), 0)
     del progress[view]
 
 
